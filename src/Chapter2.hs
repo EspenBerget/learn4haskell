@@ -751,7 +751,7 @@ the list with only those lists that contain a passed element.
 
 🕯 HINT: Use the 'elem' function to check whether an element belongs to a list
 -}
-contains :: (Eq a, Num a) => a -> [[a]] -> [[a]]  
+contains :: Eq a => a -> [[a]] -> [[a]]  
 contains x = filter (elem x) 
 
 
@@ -855,6 +855,7 @@ list.
 🕯 HINT: Use the 'cycle' function
 -}
 rotate :: Int -> [a] -> [a]
+rotate _ [] = []
 rotate n xs = drop n (take (length xs + n) (cycle xs))
 
 {- |
