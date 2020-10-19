@@ -660,7 +660,7 @@ aren't ready for this boss yet!
 
 firstDigit :: Integral a => a -> a 
 firstDigit n 
-    | n < 10 = n
+    | n < 10 && n >= 0 = n
     | otherwise = firstDigit (div (abs n) 10)
 
 
