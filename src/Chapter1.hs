@@ -659,9 +659,11 @@ aren't ready for this boss yet!
 -}
 
 firstDigit :: Integral a => a -> a 
-firstDigit n 
-    | n < 10 = n
-    | otherwise = firstDigit (div (abs n) 10)
+firstDigit n = go (abs n)
+  where
+    go x
+      | x < 10 = x
+      | otherwise = go (div x 10)
 
 
 {-
